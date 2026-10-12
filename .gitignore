@@ -1,0 +1,61 @@
+# --- secrets and credentials (never commit) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials*
+.netrc
+_netrc
+
+# --- Python / Node environments and caches ---
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+node_modules/
+
+# --- build output ---
+frontend/dist/
+build/
+dist/
+
+# --- logs ---
+*.log
+logs/
+
+# --- local databases (users, audit log, rescued facts) ---
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# --- ALL data: downloads, scans, derived layers, snapshots, uploads ---
+# Raw and derived data are NOT redistributed. Run the ingestion scripts to re-download open data.
+# Only the folder structure is kept (.gitkeep files).
+/data/**
+!/data/*/
+/data/*/**
+!/data/*/.gitkeep
+!/data/README.md
+
+# --- generated user outputs (claim report PDFs, map snapshots) ---
+reports/generated/
+
+# --- local editor / OS files ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# TypeScript incremental build info
+*.tsbuildinfo

@@ -1,0 +1,26 @@
+{
+  "page_image": "data/samples/gmw_1902_p116.png",
+  "source_id": "internet_archive_scans",
+  "title": "The Gold Mines of the World (1902), p.116",
+  "licence": "Public domain (Internet Archive: NOT_IN_COPYRIGHT)",
+  "labelled_by": "Claude (build assistant), read from the page image",
+  "verified_by_geologist": false,
+  "note": "Unique facts on the page. Mine names are labelled even where the word 'Mine' does not follow the name.",
+  "facts": [
+    {"type": "mine", "value": "Beatrice Mine"},
+    {"type": "mine", "value": "Alice Proprietary Mine"},
+    {"type": "mine", "value": "Rezende Mine"},
+    {"type": "mine", "value": "Bartissol Mine"},
+    {"type": "mine", "value": "Grand Reef"},
+    {"type": "mine", "value": "Revue Mine"},
+    {"type": "mine", "value": "Pardy's Mine"},
+    {"type": "mine", "value": "Mozambique Mine"},
+    {"type": "mine", "value": "Quagga Mine"},
+    {"type": "mine", "value": "Sabi Ophir Mine"},
+    {"type": "mine", "value": "Vaughan-Williams Mine"},
+    {"type": "mine", "value": "Penhalonga Mine"},
+    {"type": "mine", "value": "Premier Tati Monarch Mine"},
+    {"type": "commodity", "value": "gold"},
+    {"type": "lithology", "value": "quartz reef"}
+  ]
+}

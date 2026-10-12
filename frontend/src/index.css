@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-sand text-ink antialiased;
+  font-size: 15px;
+}
+
+/* Presenter Mode enlarges everything (Tailwind sizes are rem-based) for projectors */
+html.presenter {
+  font-size: 17.5px;
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-sand-line rounded-lg shadow-sm;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-brand text-white hover:bg-brand-light;
+  }
+  .btn-accent {
+    @apply btn bg-ochre text-white hover:bg-ochre-dark;
+  }
+  .btn-ghost {
+    @apply btn border border-sand-line bg-white text-brand hover:bg-sand-dark;
+  }
+  .btn-danger {
+    @apply btn bg-red-700 text-white hover:bg-red-800;
+  }
+  .input {
+    @apply w-full rounded-md border border-sand-line bg-white px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-ochre;
+  }
+  .label {
+    @apply block text-xs font-semibold uppercase tracking-wide text-brand/70 mb-1;
+  }
+  .th {
+    @apply text-left text-xs font-semibold uppercase tracking-wide text-brand/70 px-3 py-2 border-b border-sand-line bg-sand;
+  }
+  .td {
+    @apply px-3 py-2 border-b border-sand-line align-top text-sm;
+  }
+}

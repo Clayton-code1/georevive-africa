@@ -1,0 +1,1088 @@
+{
+  "generated": "2026-10-12 05:41 UTC",
+  "pilot_area": {
+    "name": "Harare 1:100 000 sheet (ZGS Bulletin 94) - provisional extent",
+    "bbox": [
+      30.75,
+      -18.05,
+      31.5,
+      -17.55
+    ]
+  },
+  "sources": [
+    {
+      "id": "aster",
+      "name": "ASTER Global Emissivity Dataset (AG100 v003) / ASTER L1T",
+      "publisher": "NASA / METI, distributed by NASA LP DAAC (Earthdata)",
+      "url": "https://lpdaac.usgs.gov/products/ag100v003/",
+      "urls_tried": [
+        {
+          "url": "https://lpdaac.usgs.gov/products/ag100v003/",
+          "result": "not attempted: needs Earthdata login"
+        }
+      ],
+      "licence": "NASA Earthdata: no restrictions on use, citation requested; requires free Earthdata login",
+      "licence_url": "https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-use-guidance",
+      "attribution": "ASTER GED courtesy of NASA/METI/AIST/Japan Spacesystems and U.S./Japan ASTER Science Team",
+      "accessed_at": "2026-10-10T20:22:56.219858",
+      "bbox": null,
+      "record_count": null,
+      "raster_size": null,
+      "status": "needs_credentials",
+      "note": "Optional. Thermal-infrared emissivity (silica, carbonate) and SWIR bands for improved mineral mapping.",
+      "usage": "Optional extra evidence layers (not required for the demo).",
+      "error": "No Earthdata credentials in .env (EARTHDATA_USERNAME / EARTHDATA_PASSWORD).",
+      "how_to_obtain": "1. Create a free NASA Earthdata account at https://urs.earthdata.nasa.gov/users/new\n2. In Earthdata, approve the 'LP DAAC Data Pool' application (Profile > Applications > Authorized Apps).\n3. Add EARTHDATA_USERNAME and EARTHDATA_PASSWORD to the .env file in the GeoRevive folder.\n4. Re-run:  .\\.venv\\Scripts\\python.exe -m georevive.ingest --source aster",
+      "details": {},
+      "is_inbox": false,
+      "layers": [],
+      "files": []
+    },
+    {
+      "id": "bgs_harare_map",
+      "name": "BGS digital Harare 1:100k geological map (GeoPackage, ZGS Bulletin No. 94)",
+      "publisher": "British Geological Survey / Zimbabwe Geological Survey",
+      "url": "https://nora.nerc.ac.uk/id/eprint/541846/",
+      "urls_tried": [
+        {
+          "url": "https://nora.nerc.ac.uk/id/eprint/541846/",
+          "result": "no public GeoPackage link"
+        }
+      ],
+      "licence": "licence to confirm (not publicly released; terms to be agreed with BGS/ZGS)",
+      "licence_url": null,
+      "attribution": "Geology: Zimbabwe Geological Survey Bulletin 94 map, digitised by BGS (OR/26/047)",
+      "accessed_at": "2026-10-10T20:14:05.750034",
+      "bbox": null,
+      "record_count": null,
+      "raster_size": null,
+      "status": "needs_manual_request",
+      "note": "Bedrock geology polygons, boundaries and faults with LEX-RCS codes for the pilot sheet.",
+      "usage": "Primary geology for the pilot area: host-rock (greenstone, mafic-ultramafic) and granite-contact evidence layers; fault/shear-zone distance layer.",
+      "error": "The GeoPackage is not publicly downloadable (no download link on the NORA record).",
+      "how_to_obtain": "The digitised map (GeoPackage) is described in BGS report OR/26/047 but is not offered for public download.\n1. Email BGS Enquiries: enquiries@bgs.ac.uk (cc the report authors via BGS: M.N. Jansen, T. Reeves, M. Krabbendam, S. Piper, B. Brauns). Quote 'OR/26/047 Harare 1:100k GeoPackage'.\n2. The map was digitised for the Zimbabwe Geological Survey (ZGS), which owns the original map: ask ZGS (Ministry of Mines and Mining Development, Harare) for permission to use the digital version for this prototype.\n3. State the purpose (UNDP/timbuktoo pre-incubation prototype, non-commercial) and ask for the licence terms in writing.\n4. When received, save the .gpkg file into data/inbox/bgs/ and re-run: .\\.venv\\Scripts\\python.exe -m georevive.ingest --source bgs_harare_map",
+      "details": {},
+      "is_inbox": false,
+      "layers": [],
+      "files": []
+    },
+    {
+      "id": "bgs_or26047_report",
+      "name": "BGS report OR/26/047 - Digitisation of the 1:100k geological map of Harare",
+      "publisher": "British Geological Survey (UKRI), for the Zimbabwe Geological Survey",
+      "url": "https://nora.nerc.ac.uk/id/eprint/541846/",
+      "urls_tried": [
+        {
+          "url": "https://nora.nerc.ac.uk/id/eprint/541846/",
+          "result": "HTTP 200"
+        }
+      ],
+      "licence": "NORA access policy: single copy for personal research/study, educational or not-for-profit use with full citation; no robot harvesting; no commercial sale. \u00a9 UKRI",
+      "licence_url": "https://nora.nerc.ac.uk/policies.html",
+      "attribution": "Jansen, M.N.; Reeves, T.; Krabbendam, M.; Piper, S.; Brauns, B. 2026. Digitisation of the 1:100k scale geological map of Harare, Zimbabwe. Nottingham, UK, British Geological Survey, 23pp. (OR/26/047)",
+      "accessed_at": "2026-10-10T20:14:05.668971",
+      "bbox": null,
+      "record_count": null,
+      "raster_size": null,
+      "status": "needs_manual_request",
+      "note": "23-page report describing the digitised Harare 1:100k map (ZGS Bulletin No. 94): GeoPackage layers for bedrock polygons, boundaries, faults and seed points, with LEX-RCS unit codes.",
+      "usage": "Documents the pilot-area map; used to confirm the sheet extent and unit codes. Not redistributed.",
+      "error": "Report PDF not fetched automatically: NORA forbids robot harvesting of full-text items.",
+      "how_to_obtain": "NORA's policy allows single copies for research/educational/not-for-profit use but forbids robot harvesting, so GeoRevive does not download the PDF automatically.\n1. Open https://nora.nerc.ac.uk/id/eprint/541846/ in a browser and download OR26047.pdf.\n2. Save it as data/inbox/bgs/OR26047.pdf\n3. Re-run: .\\.venv\\Scripts\\python.exe -m georevive.ingest --source bgs_or26047_report",
+      "details": {
+        "nora_metadata": {
+          "page_title": "Digitisation of the 1:100k scale geological map of Harare, Zimbabwe  - NERC Open Research Archive",
+          "gpkg_links_on_page": [],
+          "pdf_link_listed": true
+        },
+        "citation": "Jansen, M.N.; Reeves, T.; Krabbendam, M.; Piper, S.; Brauns, B. 2026. Digitisation of the 1:100k scale geological map of Harare, Zimbabwe. Nottingham, UK, British Geological Survey, 23pp. (OR/26/047)"
+      },
+      "is_inbox": false,
+      "layers": [],
+      "files": []
+    },
+    {
+      "id": "bgs_zimbabwe_geochem",
+      "name": "Zimbabwe Regional Geochemical Survey (1982-86) - BGS international geochemistry CD-ROM",
+      "publisher": "British Geological Survey / Zimbabwe Geological Survey",
+      "url": "https://www.bgs.ac.uk/geology-projects/applied-geochemistry/international-geochemistry-cd-rom/zimbabwe-regional-geochemical-survey/",
+      "urls_tried": [
+        {
+          "url": "https://www.data.gov.uk/dataset/756d6426-d52d-492a-a263-599ad1caa123/zimbabwe-regional-geochemical-survey",
+          "result": "HTTP 200"
+        }
+      ],
+      "licence": "licence to confirm with BGS",
+      "licence_url": null,
+      "attribution": "",
+      "accessed_at": "2026-10-10T20:39:13.057842",
+      "bbox": null,
+      "record_count": null,
+      "raster_size": null,
+      "status": "needs_manual_request",
+      "note": "Regional stream-sediment geochemistry survey covering parts of Zimbabwe including the Harare area.",
+      "usage": "Potential geochemical evidence layer (e.g. Au, As pathfinders) once obtained.",
+      "error": "Distributed by BGS on request (international geochemistry CD-ROM); no open download link found.",
+      "how_to_obtain": "1. See https://www.bgs.ac.uk/geology-projects/applied-geochemistry/international-geochemistry-cd-rom/zimbabwe-regional-geochemical-survey/\n2. Email enquiries@bgs.ac.uk asking for the Zimbabwe Regional Geochemical Survey data covering the Harare sheet, its licence terms and any charges.\n3. Save the files into data/inbox/ and enter the licence details when prompted.",
+      "details": {
+        "download_links_found": []
+      },
+      "is_inbox": false,
+      "layers": [],
+      "files": []
+    },
+    {
+      "id": "copernicus_dem_glo30",
+      "name": "Copernicus DEM GLO-30 (30 m digital surface model)",
+      "publisher": "European Space Agency / Airbus (Copernicus programme), via AWS Open Data",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+      "urls_tried": [
+        {
+          "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S19_00_E030_00_DEM/Copernicus_DSM_COG_10_S19_00_E030_00_DEM.tif",
+          "result": "cached: dem_30m.tif"
+        }
+      ],
+      "licence": "Copernicus DEM licence: free of charge, worldwide, for any lawful use, with attribution",
+      "licence_url": "https://spacedata.copernicus.eu/documents/20123/122407/GEO1988-CopernicusDEM-SPE-002_ProductHandbook_I5.0+%281%29.pdf",
+      "attribution": "Copernicus DEM \u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA",
+      "accessed_at": "2026-10-10T20:41:39.232117",
+      "bbox": [
+        30.75,
+        -18.05,
+        31.5,
+        -17.55
+      ],
+      "record_count": null,
+      "raster_size": "2670 x 1872 px @ 30 m (1 band)",
+      "status": "downloaded",
+      "note": "Elevation (surface model) at ~30 m, reprojected to UTM 36S. Elevation range 1141-1649 m.",
+      "usage": "Hillshade base map (works offline); slope and terrain roughness evidence layers; lineament support.",
+      "error": null,
+      "how_to_obtain": null,
+      "details": {
+        "tiles": [
+          "Copernicus_DSM_COG_10_S19_00_E030_00_DEM",
+          "Copernicus_DSM_COG_10_S19_00_E031_00_DEM",
+          "Copernicus_DSM_COG_10_S18_00_E030_00_DEM",
+          "Copernicus_DSM_COG_10_S18_00_E031_00_DEM"
+        ]
+      },
+      "is_inbox": false,
+      "layers": [
+        {
+          "id": "dem_elevation",
+          "name": "Elevation (m)",
+          "kind": "raster"
+        },
+        {
+          "id": "dem_slope",
+          "name": "Slope (degrees)",
+          "kind": "raster"
+        },
+        {
+          "id": "dem_roughness",
+          "name": "Terrain roughness (TRI, m)",
+          "kind": "raster"
+        },
+        {
+          "id": "dem_hillshade",
+          "name": "Hillshade (base map)",
+          "kind": "raster"
+        }
+      ],
+      "files": [
+        {
+          "path": "data/raw/copernicus_dem_glo30/dem_30m.tif",
+          "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S19_00_E030_00_DEM/Copernicus_DSM_COG_10_S19_00_E030_00_DEM.tif",
+          "sha256": "bd360e633bc52888863c3510ba6198f21cfeb594c732ac7c1127bb54aa3cfd55",
+          "bytes": 20444330
+        },
+        {
+          "path": "data/raw/copernicus_dem_glo30/manifest.json",
+          "url": null,
+          "sha256": "5a58bd6009a9373564dbf501b57c30410a94adeff2b884688640d48bdcc1a562",
+          "bytes": 813
+        }
+      ]
+    },
+    {
+      "id": "earthchem",
+      "name": "EarthChem Portal - rock geochemistry samples in the pilot area",
+      "publisher": "EarthChem / IEDA (Lamont-Doherty Earth Observatory)",
+      "url": "https://www.earthchem.org/",
+      "urls_tried": [
+        {
+          "url": "https://ecp.iedadata.org/restsearchservice?outputtype=json&searchtype=rowdata&standarditems=yes&westlongitude=30.75&eastlongitude=31.5&southlatitude=-18.05&northlatitude=-17.55",
+          "result": "error: ConnectionError: HTTPSConnectionPool(host='ecp.iedadata.org', port=443): Max retries exceeded with url: /restsearchservice?outputtype=json&searchtype=rowdata&standarditems=yes&westlongitude=30.75&eastlongitude=31.5&southlatitude=-18.05&northlatitude=-17.55 (Caused by NameResolutionError(\"HTTP"
+        }
+      ],
+      "licence": "CC BY 4.0 for EarthChem Library data (per-dataset; licence to confirm per sample source)",
+      "licence_url": "https://www.earthchem.org/about/policies/",
+      "attribution": "Geochemistry: EarthChem Portal (and original publications)",
+      "accessed_at": "2026-10-10T20:39:10.708478",
+      "bbox": null,
+      "record_count": null,
+      "raster_size": null,
+      "status": "failed",
+      "note": "Published whole-rock and mineral analyses with coordinates.",
+      "usage": "Optional context layer (sample locations and Au/As/Cu values where reported).",
+      "error": "EarthChem REST search unreachable: ConnectionError: HTTPSConnectionPool(host='ecp.iedadata.org', port=443): Max retries exceeded with url: /restsearchservice?outputtype=json&searchtype=rowdata&standarditems=yes&westlongitude=30.75&eastlongitude=31.5&southlatitude=-18.05&northlatitude=-17.55 (Caused by NameResolutionError(\"HTTPSConnection(host='ecp.iedadata.org', port=443): Failed to resolve 'ecp.i",
+      "how_to_obtain": "Use the EarthChem Portal web search (https://portal.earthchem.org/) with the pilot bounding box, export CSV, and drop it into data/inbox/ with the citation details.",
+      "details": {},
+      "is_inbox": false,
+      "layers": [],
+      "files": []
+    },
+    {
+      "id": "esa_worldcover",
+      "name": "ESA WorldCover 2021 v200 (10 m land cover)",
+      "publisher": "European Space Agency (ESA WorldCover consortium), via AWS Open Data",
+      "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_S21E030_Map.tif",
+      "urls_tried": [
+        {
+          "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_S21E030_Map.tif",
+          "result": "read window"
+        },
+        {
+          "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_S18E030_Map.tif",
+          "result": "read window"
+        }
+      ],
+      "licence": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\u00a9 ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021)",
+      "accessed_at": "2026-10-10T20:40:43.507572",
+      "bbox": [
+        30.75,
+        -18.05,
+        31.5,
+        -17.55
+      ],
+      "record_count": null,
+      "raster_size": "2670 x 1872 px @ 30 m (1 band)",
+      "status": "downloaded",
+      "note": "Global land-cover classes (tree, shrub, grass, crop, built-up, bare, water...) at 10 m for 2021. Built-up 7.8% of the pilot area.",
+      "usage": "Masks built-up areas and water so that roofs, roads and bare urban soil are not mistaken for alteration, and so that no target is placed in a town.",
+      "error": null,
+      "how_to_obtain": null,
+      "details": {
+        "tiles": [
+          "S21E030",
+          "S18E030"
+        ],
+        "class_percent": {
+          "Tree cover": 17.4,
+          "Shrubland": 12.9,
+          "Grassland": 33.3,
+          "Cropland": 27.3,
+          "Built-up": 7.8,
+          "Bare / sparse vegetation": 0.4,
+          "Permanent water": 0.8,
+          "Herbaceous wetland": 0.1
+        }
+      },
+      "is_inbox": false,
+      "layers": [
+        {
+          "id": "landcover",
+          "name": "Land cover (ESA WorldCover 2021)",
+          "kind": "raster"
+        }
+      ],
+      "files": [
+        {
+          "path": "data/raw/esa_worldcover/worldcover_30m.tif",
+          "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_S21E030_Map.tif",
+          "sha256": "105f124211dc278607ac184bc8476020395af62d90942f3eeaec1a2ff2062742",
+          "bytes": 3131485
+        },
+        {
+          "path": "data/raw/esa_worldcover/manifest.json",
+          "url": null,
+          "sha256": "7c2c09ad524a495dfc566bd10094b70d4a3262ad1ea4c926eef02159b647751d",
+          "bytes": 312
+        }
+      ]
+    },
+    {
+      "id": "geoboundaries",
+      "name": "geoBoundaries - Zimbabwe administrative boundaries (ADM0-ADM2)",
+      "publisher": "geoBoundaries (William & Mary geoLab)",
+      "url": "https://www.geoboundaries.org/api/current/gbOpen/ZWE/ADM2/",
+      "urls_tried": [
+        {
+          "url": "https://www.geoboundaries.org/api/current/gbOpen/ZWE/ADM0/",
+          "result": "HTTP 200"
+        },
+        {
+          "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/ZWE/ADM0/geoBoundaries-ZWE-ADM0.geojson",
+          "result": "HTTP 200"
+        },
+        {
+          "url": "https://www.geoboundaries.org/api/current/gbOpen/ZWE/ADM1/",
+          "result": "HTTP 200"
+        },
+        {
+          "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/ZWE/ADM1/geoBoundaries-ZWE-ADM1.geojson",
+          "result": "HTTP 200"
+        },
+        {
+          "url": "https://www.geoboundaries.org/api/current/gbOpen/ZWE/ADM2/",
+          "result": "HTTP 200"
+        },
+        {
+          "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/ZWE/ADM2/geoBoundaries-ZWE-ADM2.geojson",
+          "result": "HTTP 200"
+        }
+      ],
+      "licence": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licence_url": null,
+      "attribution": "Boundaries: geoBoundaries (Runfola et al. 2020), source ZIMSTAT / OCHA ROSEA",
+      "accessed_at": "2026-10-10T20:23:43.312955",
+      "bbox": [
+        25.2376,
+        -22.421,
+        33.0672,
+        -15.6071
+      ],
+      "record_count": 102,
+      "raster_size": null,
+      "status": "downloaded",
+      "note": "Country, province and district boundaries for Zimbabwe.",
+      "usage": "District names in claim reports; plain base map that works offline.",
+      "error": null,
+      "how_to_obtain": null,
+      "details": {
+        "levels": {
+          "ADM0": {
+            "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+            "licenseSource": "data.humdata.org/dataset/zimbabwe-administrative-levels-0-3-boundaries",
+            "boundarySource": "Zimbabwe National Statistics Agency (ZIMSTAT www.zimstat.co.zw) Central Statistics Office, OCHA ROSEA",
+            "boundaryYearRepresented": "2020",
+            "admUnitCount": "1",
+            "gjDownloadURL": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/ZWE/ADM0/geoBoundaries-ZWE-ADM0.geojson",
+            "boundaryCanonical": "Country",
+            "buildDate": "Dec 12, 2023"
+          },
+          "ADM1": {
+            "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+            "licenseSource": "data.humdata.org/dataset/zimbabwe-administrative-levels-0-3-boundaries",
+            "boundarySource": "Zimbabwe National Statistics Agency (ZIMSTAT www.zimstat.co.zw) Central Statistics Office, OCHA ROSEA",
+            "boundaryYearRepresented": "2020",
+            "admUnitCount": "10",
+            "gjDownloadURL": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/ZWE/ADM1/geoBoundaries-ZWE-ADM1.geojson",
+            "boundaryCanonical": "Province",
+            "buildDate": "Dec 12, 2023"
+          },
+          "ADM2": {
+            "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+            "licenseSource": "data.humdata.org/dataset/zimbabwe-administrative-levels-0-3-boundaries",
+            "boundarySource": "Zimbabwe National Statistics Agency (ZIMSTAT www.zimstat.co.zw) Central Statistics Office, OCHA ROSEA",
+            "boundaryYearRepresented": "2020",
+            "admUnitCount": "91",
+            "gjDownloadURL": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/ZWE/ADM2/geoBoundaries-ZWE-ADM2.geojson",
+            "boundaryCanonical": "District",
+            "buildDate": "Dec 12, 2023"
+          }
+        }
+      },
+      "is_inbox": false,
+      "layers": [
+        {
+          "id": "admin_adm0",
+          "name": "Country boundary",
+          "kind": "vector"
+        },
+        {
+          "id": "admin_adm1",
+          "name": "Provinces",
+          "kind": "vector"
+        },
+        {
+          "id": "admin_adm2",
+          "name": "Districts",
+          "kind": "vector"
+        }
+      ],
+      "files": [
+        {
+          "path": "data/raw/geoboundaries/geoBoundaries-ZWE-ADM0.geojson",
+          "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/ZWE/ADM0/geoBoundaries-ZWE-ADM0.geojson",
+          "sha256": "dd5c7bbee97029c84287471839bdee1e68b841d1c2977a5ce633eb7d4c271359",
+          "bytes": 1780141
+        },
+        {
+          "path": "data/raw/geoboundaries/geoBoundaries-ZWE-ADM1.geojson",
+          "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/ZWE/ADM1/geoBoundaries-ZWE-ADM1.geojson",
+          "sha256": "4a84368bb234ab67e4285c7f4f5d2e460332629b843ac480fa380f49d9753f11",
+          "bytes": 7243657
+        },
+        {
+          "path": "data/raw/geoboundaries/geoBoundaries-ZWE-ADM2.geojson",
+          "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/ZWE/ADM2/geoBoundaries-ZWE-ADM2.geojson",
+          "sha256": "074a3632634b9448bb4043580fe7199e0b2f64ec68bd2f98932a2c68b3795b88",
+          "bytes": 17379177
+        },
+        {
+          "path": "data/raw/geoboundaries/api_metadata.json",
+          "url": "https://www.geoboundaries.org/api/current/gbOpen/ZWE/*/",
+          "sha256": "2b710fe0ecff0ce8bb9b30c6d38b3be8a8f71dc45c64e653f66474d88171fcc7",
+          "bytes": 1882
+        }
+      ]
+    },
+    {
+      "id": "georoc",
+      "name": "GEOROC - Geochemistry of Rocks of the Oceans and Continents",
+      "publisher": "DIGIS project, University of G\u00f6ttingen",
+      "url": "https://georoc.eu/",
+      "urls_tried": [],
+      "licence": "CC BY-SA 4.0 for GEOROC compilations (licence to confirm)",
+      "licence_url": null,
+      "attribution": "",
+      "accessed_at": "2026-10-10T20:39:10.779559",
+      "bbox": null,
+      "record_count": null,
+      "raster_size": null,
+      "status": "needs_credentials",
+      "note": "Global compilation of published rock geochemistry.",
+      "usage": "Optional context: published analyses of Harare greenstone belt rocks, if any.",
+      "error": "The GEOROC API requires an API key issued by the DIGIS GEOROC team.",
+      "how_to_obtain": "1. Request an API key from the DIGIS GEOROC team (contact via https://georoc.eu/).\n2. Or use the GEOROC web interface to search by coordinates (the pilot bounding box), download the CSV, and drop it into data/inbox/ with the citation details.",
+      "details": {},
+      "is_inbox": false,
+      "layers": [],
+      "files": []
+    },
+    {
+      "id": "hathitrust_scans",
+      "name": "HathiTrust Digital Library - Southern Rhodesia Geological Survey bulletins",
+      "publisher": "HathiTrust",
+      "url": "https://catalog.hathitrust.org/Search/Home?lookfor=%22Southern%20Rhodesia%22%20%22Geological%20Survey%22&type=all",
+      "urls_tried": [],
+      "licence": "Per volume; full view only for public-domain volumes; automated bulk download not permitted",
+      "licence_url": "https://www.hathitrust.org/the-collection/terms-conditions/acceptable-use-policy/",
+      "attribution": "",
+      "accessed_at": "2026-10-10T20:38:55.737292",
+      "bbox": null,
+      "record_count": null,
+      "raster_size": null,
+      "status": "needs_manual_request",
+      "note": "Catalogue of digitised Southern Rhodesia / Rhodesia Geological Survey bulletins and short reports.",
+      "usage": "Candidate test documents for data rescue, to be downloaded manually page by page where full view.",
+      "error": "HathiTrust's acceptable-use policy does not allow automated bulk downloading; GeoRevive does not scrape it.",
+      "how_to_obtain": "1. Open https://catalog.hathitrust.org/Search/Home?lookfor=%22Southern%20Rhodesia%22%20%22Geological%20Survey%22&type=all and tick 'Full view only'.\n2. For each public-domain bulletin, use 'Download > This page (PDF)' for the pages you need (e.g. pages describing gold deposits, with assay tables).\n3. Save the PDFs into data/inbox/ and record the HathiTrust URL and rights statement when the app asks.\n4. Volumes in 'Limited (search only)' need a request to the holding library or the Zimbabwe Geological Survey.",
+      "details": {
+        "robots_allows_catalogue_search": false
+      },
+      "is_inbox": false,
+      "layers": [],
+      "files": []
+    },
+    {
+      "id": "internet_archive_scans",
+      "name": "Historical geological publications on Internet Archive (public-domain items only)",
+      "publisher": "Internet Archive (digitised by contributing libraries)",
+      "url": "https://archive.org/",
+      "urls_tried": [
+        {
+          "url": "https://archive.org/advancedsearch.php?q=%28title%3A%28Rhodesia%29%20AND%20%28title%3A%28geology%29%20OR%20title%3A%28geological%29%20OR%20title%3A%28gold%29%20OR%20title%3A%28mineral%29%20OR%20title%3A%28mines%29%20OR%20subject%3A%28geology%29%29%29%20AND%20mediatype%3Atexts&fl[]=identifier&fl[]=title&fl[]=date&fl[]=licenseurl&fl[]=possible-copyright-status&fl[]=rights&fl[]=collection&rows=100&output=json",
+          "result": "HTTP 200"
+        },
+        {
+          "url": "https://archive.org/advancedsearch.php?q=%28%22Geological%20Survey%22%20AND%20%28Rhodesia%20OR%20Zimbabwe%20OR%20Mashonaland%29%29%20AND%20mediatype%3Atexts&fl[]=identifier&fl[]=title&fl[]=date&fl[]=licenseurl&fl[]=possible-copyright-status&fl[]=rights&fl[]=collection&rows=100&output=json",
+          "result": "HTTP 200"
+        },
+        {
+          "url": "https://archive.org/advancedsearch.php?q=%28subject%3A%28%22Geology%20--%20Zimbabwe%22%29%20OR%20subject%3A%28%22Geology%20--%20Rhodesia%22%29%20OR%20subject%3A%28%22Mines%20and%20mineral%20resources%20--%20Zimbabwe%22%29%29%20AND%20mediatype%3Atexts&fl[]=identifier&fl[]=title&fl[]=date&fl[]=licenseurl&fl[]=possible-copyright-status&fl[]=rights&fl[]=collection&rows=100&output=json",
+          "result": "HTTP 200"
+        },
+        {
+          "url": "https://archive.org/metadata/goldminesworldd00curlgoog",
+          "result": "HTTP 200"
+        },
+        {
+          "url": "https://archive.org/download/goldminesworldd00curlgoog/goldminesworldd00curlgoog.pdf",
+          "result": "HTTP 200"
+        },
+        {
+          "url": "https://archive.org/metadata/paper-doi-10_1038_087511b0",
+          "result": "HTTP 200"
+        },
+        {
+          "url": "https://archive.org/download/paper-doi-10_1038_087511b0/paper-doi-10_1038_087511b0.pdf",
+          "result": "HTTP 200"
+        },
+        {
+          "url": "https://archive.org/metadata/prehistoricrhode00hall",
+          "result": "HTTP 200"
+        },
+        {
+          "url": "https://archive.org/download/prehistoricrhode00hall/prehistoricrhode00hall.pdf",
+          "result": "HTTP 200"
+        }
+      ],
+      "licence": "Per item: only items flagged public domain / not in copyright are downloaded (see details)",
+      "licence_url": "https://archive.org/about/terms.php",
+      "attribution": "Scans courtesy of the Internet Archive and contributing libraries",
+      "accessed_at": "2026-10-10T20:38:55.188087",
+      "bbox": null,
+      "record_count": 3,
+      "raster_size": "1159 scanned pages",
+      "status": "downloaded",
+      "note": "Scanned historical texts about Rhodesian/Zimbabwean geology, gold mines and mineral resources. Items: The gold mines of the world : written after an inspection of the mines (1902); The Mineral Industry of Rhodesia (1911); Prehistoric Rhodesia; an examination of the historical, ethnological a (1909)",
+      "usage": "Test documents for the data-rescue pipeline (enhancement, OCR, fact extraction, accuracy check).",
+      "error": null,
+      "how_to_obtain": null,
+      "details": {
+        "candidates_open": [
+          {
+            "identifier": "goldminesworldd00curlgoog",
+            "title": "The gold mines of the world : written after an inspection of the mines of the Transvaal, Rhodesia, India, Malay Peninsula, West Australia, Queensland, Victoria, New South Wales, Tasmania, New Zealand, British Columbia, the Klondike, United States, Alaska and Mexico",
+            "date": "1902-01-01T00:00:00Z",
+            "rights": "NOT_IN_COPYRIGHT",
+            "pdf": "goldminesworldd00curlgoog/goldminesworldd00curlgoog.pdf"
+          },
+          {
+            "identifier": "paper-doi-10_1038_087511b0",
+            "title": "The Mineral Industry of Rhodesia",
+            "date": "1911-10-01T00:00:00Z",
+            "rights": "https://creativecommons.org/publicdomain/mark/1.0/",
+            "pdf": "paper-doi-10_1038_087511b0/paper-doi-10_1038_087511b0.pdf"
+          },
+          {
+            "identifier": "prehistoricrhode00hall",
+            "title": "Prehistoric Rhodesia; an examination of the historical, ethnological and archaeological evidencesas to the origin and age of the rock mines and stone buildings, with a gazetteer of mediaeval south -east Africa, 915 A.D. to 1760 A.D., and the countries of the Monomotapa, Manica, Sabia, Quiteve, Sofala, and Mozambique",
+            "date": "1909-01-01T00:00:00Z",
+            "rights": "Not in copyright. The Library knows of no copyright restrictions on this item.",
+            "pdf": "prehistoricrhode00hall/prehistoricrhode00hall.pdf"
+          }
+        ],
+        "not_downloaded_rights_unclear": [
+          {
+            "identifier": "india.history.resource.88587",
+            "title": "The Oxford Survey of the British Empire- Africa, including South Africa, Rhodesia, Nyasa Land, British East Africa, Uganda, Somali Land, Anglo-Egyptian Sudan and Egypt, Gambia, Sierra Leone, Gold Coast, Nigeria, Walfish Bay with Mauritius and other Islands in the Indian and Atlantic Oceans",
+            "date": "1914-01-01T00:00:00Z",
+            "rights": "no rights statement"
+          },
+          {
+            "identifier": "SouthernRhodesiaReportOnNaturalResources",
+            "title": "Southern Rhodesia Report on Natural Resources",
+            "date": "1939-01-01T00:00:00Z",
+            "rights": "no rights statement"
+          },
+          {
+            "identifier": "india.history.resource.106668",
+            "title": "Correspondence relating to the Recruitment of Labour in the Nyasaland Protectorate for the Transvaal and Southern Rhodesia Mines",
+            "date": "1908-01-01T00:00:00Z",
+            "rights": "no rights statement"
+          },
+          {
+            "identifier": "prehistoricrhode00hall_0",
+            "title": "Pre-historic Rhodesia : an examination of the historical, ethnological and archaeological evidences as to the origin and age of the rock mines and stone buildings, with a gazetteer of Medieval South-East Africa, 915 A.D. to 1760 A.D. and the countries of Monomotapa, Manica, Sabia, Quiteve, Sofala and Mozambique",
+            "date": "1990-01-01T00:00:00Z",
+            "rights": "no rights statement"
+          },
+          {
+            "identifier": "cihm_35807",
+            "title": "History of the war in South Africa [microform] : containing an authentic account of the great struggle between the British and the Boers, including the causes of the conflict, vivid descriptions of fierce battles ... together with the wonderful story of the Transvaal, the Orange Free State, Natal and Cape Colony, Rhodesia and Bechuanaland, the Kaffirs and Zulus, richest gold and diamond mines in the world, etc.",
+            "date": "1900-01-01T00:00:00Z",
+            "rights": "no rights statement"
+          }
+        ],
+        "downloaded": [
+          {
+            "identifier": "goldminesworldd00curlgoog",
+            "title": "The gold mines of the world : written after an inspection of the mines of the Transvaal, Rhodesia, India, Malay Peninsula, West Australia, Queensland, Victoria, New South Wales, Tasmania, New Zealand, British Columbia, the Klondike, United States, Alaska and Mexico",
+            "date": "1902-01-01T00:00:00Z",
+            "rights": "NOT_IN_COPYRIGHT",
+            "pdf": "goldminesworldd00curlgoog/goldminesworldd00curlgoog.pdf",
+            "pages": 505
+          },
+          {
+            "identifier": "paper-doi-10_1038_087511b0",
+            "title": "The Mineral Industry of Rhodesia",
+            "date": "1911-10-01T00:00:00Z",
+            "rights": "https://creativecommons.org/publicdomain/mark/1.0/",
+            "pdf": "paper-doi-10_1038_087511b0/paper-doi-10_1038_087511b0.pdf",
+            "pages": 2
+          },
+          {
+            "identifier": "prehistoricrhode00hall",
+            "title": "Prehistoric Rhodesia; an examination of the historical, ethnological and archaeological evidencesas to the origin and age of the rock mines and stone buildings, with a gazetteer of mediaeval south -east Africa, 915 A.D. to 1760 A.D., and the countries of the Monomotapa, Manica, Sabia, Quiteve, Sofala, and Mozambique",
+            "date": "1909-01-01T00:00:00Z",
+            "rights": "Not in copyright. The Library knows of no copyright restrictions on this item.",
+            "pdf": "prehistoricrhode00hall/prehistoricrhode00hall.pdf",
+            "pages": 652
+          }
+        ]
+      },
+      "is_inbox": false,
+      "layers": [],
+      "files": [
+        {
+          "path": "data/raw/internet_archive_scans/goldminesworldd00curlgoog/goldminesworldd00curlgoog.pdf",
+          "url": "https://archive.org/download/goldminesworldd00curlgoog/goldminesworldd00curlgoog.pdf",
+          "sha256": "6d0f0024eb5c25b8f4230b05ab9a4941ff0de8e8a7cdc01f09c59b73603894e3",
+          "bytes": 13057218
+        },
+        {
+          "path": "data/raw/internet_archive_scans/goldminesworldd00curlgoog/item_metadata.json",
+          "url": "https://archive.org/metadata/goldminesworldd00curlgoog",
+          "sha256": "36cb4c0630a3ed37b5d5b636fe45f942e18b20ac3989d38322f35937b4111074",
+          "bytes": 1874
+        },
+        {
+          "path": "data/raw/internet_archive_scans/paper-doi-10_1038_087511b0/paper-doi-10_1038_087511b0.pdf",
+          "url": "https://archive.org/download/paper-doi-10_1038_087511b0/paper-doi-10_1038_087511b0.pdf",
+          "sha256": "0a420372e2ebdc43bc9d529e9b708d6dffe5309ada02f629a567d98b4a2d9e33",
+          "bytes": 220638
+        },
+        {
+          "path": "data/raw/internet_archive_scans/paper-doi-10_1038_087511b0/item_metadata.json",
+          "url": "https://archive.org/metadata/paper-doi-10_1038_087511b0",
+          "sha256": "b5f614c49d39d272c9b555ef4ce1af5a24cdccdde4e3126ade47bd74995c4430",
+          "bytes": 1461
+        },
+        {
+          "path": "data/raw/internet_archive_scans/prehistoricrhode00hall/prehistoricrhode00hall.pdf",
+          "url": "https://archive.org/download/prehistoricrhode00hall/prehistoricrhode00hall.pdf",
+          "sha256": "c7222cd83de615bc3bbbc905a8317547277497d9305710ad0d78041f95f11523",
+          "bytes": 57332974
+        },
+        {
+          "path": "data/raw/internet_archive_scans/prehistoricrhode00hall/item_metadata.json",
+          "url": "https://archive.org/metadata/prehistoricrhode00hall",
+          "sha256": "f422477481c5fec9311e447e22507830b0dece907883da0d06fac00bfd156a5b",
+          "bytes": 2507
+        },
+        {
+          "path": "data/raw/internet_archive_scans/manifest.json",
+          "url": null,
+          "sha256": "ceb24d2e19983f84634f15ef9b567ba1fa90086259db01470a44022e210b0e0d",
+          "bytes": 1491
+        }
+      ]
+    },
+    {
+      "id": "onegeology",
+      "name": "OneGeology Portal - geology web map services covering Zimbabwe",
+      "publisher": "OneGeology (Commission for the Geological Map of the World partnership)",
+      "url": "https://portal.onegeology.org/",
+      "urls_tried": [
+        {
+          "url": "https://portal.onegeology.org/",
+          "result": "error: SSLError: HTTPSConnectionPool(host='portal.onegeology.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'portal.onegeology.org'. (_ssl.c"
+        }
+      ],
+      "licence": "Per service (to confirm for any service found)",
+      "licence_url": null,
+      "attribution": "",
+      "accessed_at": "2026-10-10T20:42:11.709722",
+      "bbox": null,
+      "record_count": null,
+      "raster_size": null,
+      "status": "needs_manual_request",
+      "note": "The OneGeology Portal lists geological web map services registered by national surveys.",
+      "usage": "Regional geology context, only if an openly licensed Zimbabwe layer is available.",
+      "error": "Portal unreachable (SSLError). OneGeology documents no machine-readable catalogue for automated discovery, so GeoRevive does not guess service URLs.",
+      "how_to_obtain": "1. Open https://portal.onegeology.org/ in a browser and search the layer catalogue for 'Zimbabwe'.\n2. If a Zimbabwe Geological Survey service is listed, note its WMS address and its terms of use.\n3. Ask the OneGeology team (https://onegeology.org/) or ZGS to confirm the licence before use.\nMeanwhile GeoRevive uses the CGMW-BRGM 1:10M regional map via Macrostrat for context.",
+      "details": {
+        "portal": "unreachable (SSLError)"
+      },
+      "is_inbox": false,
+      "layers": [],
+      "files": []
+    },
+    {
+      "id": "osm",
+      "name": "OpenStreetMap - roads, places, rivers and mapped mine features",
+      "publisher": "OpenStreetMap contributors (via Overpass API)",
+      "url": "https://download.geofabrik.de/africa/zimbabwe-latest.osm.pbf",
+      "urls_tried": [
+        {
+          "url": "https://overpass.kumi.systems/api/interpreter",
+          "result": "cached: overpass.json"
+        }
+      ],
+      "licence": "Open Database Licence (ODbL) 1.0",
+      "licence_url": "https://www.openstreetmap.org/copyright",
+      "attribution": "\u00a9 OpenStreetMap contributors (ODbL)",
+      "accessed_at": "2026-10-10T22:06:47.156760",
+      "bbox": [
+        30.75,
+        -18.05,
+        31.5,
+        -17.55
+      ],
+      "record_count": 4382,
+      "raster_size": null,
+      "status": "downloaded",
+      "note": "Roads, towns/villages/farms/localities, rivers and streams, and mapped quarries/mine shafts. Feature groups from: roads: https://download.geofabrik.de/africa/zimbabwe-latest.osm.pbf; waterways: https://download.geofabrik.de/africa/zimbabwe-latest.osm.pbf; places: https://download.geofabrik.de/africa/zimbabwe-latest.osm.pbf; mines: https://download.geofabrik.de/africa/zimbabwe-latest.osm.pbf",
+      "usage": "Access and context on the map and in claim reports; place and farm names for offline geocoding of rescued facts.",
+      "error": null,
+      "how_to_obtain": null,
+      "details": {
+        "counts": {
+          "osm_roads": 3490,
+          "osm_rivers": 780,
+          "osm_places": 85,
+          "osm_mine_features": 27
+        }
+      },
+      "is_inbox": false,
+      "layers": [
+        {
+          "id": "osm_roads",
+          "name": "Roads",
+          "kind": "vector"
+        },
+        {
+          "id": "osm_rivers",
+          "name": "Rivers and streams",
+          "kind": "vector"
+        },
+        {
+          "id": "osm_places",
+          "name": "Towns, villages and farms",
+          "kind": "vector"
+        },
+        {
+          "id": "osm_mine_features",
+          "name": "Mapped quarries and mine shafts (OSM)",
+          "kind": "vector"
+        }
+      ],
+      "files": [
+        {
+          "path": "data/raw/osm/overpass.json",
+          "url": "https://download.geofabrik.de/africa/zimbabwe-latest.osm.pbf",
+          "sha256": "26301699e33361b3854f27b12a8e06c3911904ffbea91a2d2d77d7bb721bffce",
+          "bytes": 4565898
+        },
+        {
+          "path": "data/raw/osm/query_mines.overpassql",
+          "url": null,
+          "sha256": "9a815dea5bae0dccb9a4fb4675d3c5b716039a8ab4138d7b2aa787a9c559ceea",
+          "bytes": 280
+        },
+        {
+          "path": "data/raw/osm/query_places.overpassql",
+          "url": null,
+          "sha256": "111df563e4d887b2c5d66c57770115f05b3a185ec035a56f06f4e5d7ffc88f89",
+          "bytes": 163
+        },
+        {
+          "path": "data/raw/osm/query_roads.overpassql",
+          "url": null,
+          "sha256": "26b353e497bee8ac2c60d02777145ee35b9f7a2f23571a1366d349745339a8d6",
+          "bytes": 193
+        },
+        {
+          "path": "data/raw/osm/query_waterways.overpassql",
+          "url": null,
+          "sha256": "0e7e69cca68785a8ad9b30cced69910d604757610ba0571605274e4b3abe184a",
+          "bytes": 114
+        }
+      ]
+    },
+    {
+      "id": "regional_geology",
+      "name": "Regional geology - CGMW-BRGM 1:10M Geological Map of Africa (via Macrostrat API)",
+      "publisher": "Macrostrat (University of Wisconsin-Madison); map source CGMW-BRGM (Thi\u00e9blemont ed.)",
+      "url": "https://macrostrat.org/api/v2/geologic_units/map",
+      "urls_tried": [
+        {
+          "url": "https://macrostrat.org/api/v2/geologic_units/map",
+          "result": "cached: macrostrat_small.geojson"
+        }
+      ],
+      "licence": "CC BY 4.0 as stated by the Macrostrat API; underlying CGMW-BRGM map - licence to confirm with CGMW",
+      "licence_url": "https://macrostrat.org/",
+      "attribution": "Regional geology: Macrostrat (CC BY 4.0) / CGMW-BRGM 1:10M Geological Map of Africa",
+      "accessed_at": "2026-10-10T21:43:19.089815",
+      "bbox": [
+        30.75,
+        -18.05,
+        31.5,
+        -17.55
+      ],
+      "record_count": 9,
+      "raster_size": null,
+      "status": "downloaded",
+      "note": "Very small-scale (1:10 million) lithology/age polygons; separates Archean volcano-sedimentary belts from granitoids.",
+      "usage": "Regional context outside the pilot sheet, and a coarse fallback host-rock layer if the BGS 1:100k geology is not available. Far too coarse for target-scale decisions.",
+      "error": null,
+      "how_to_obtain": null,
+      "details": {
+        "lithologies": [
+          "plutonic and metamorphic",
+          "volcanic-sedimentary",
+          "volcanic-sedimentary and plutonic"
+        ],
+        "polygons_total": 9
+      },
+      "is_inbox": false,
+      "layers": [
+        {
+          "id": "regional_geology",
+          "name": "Regional geology (1:10M, CGMW-BRGM)",
+          "kind": "vector"
+        }
+      ],
+      "files": [
+        {
+          "path": "data/raw/regional_geology/macrostrat_small.geojson",
+          "url": "https://macrostrat.org/api/v2/geologic_units/map?scale=small",
+          "sha256": "414abc975f899d58fff8416404c4fb3acf982fec52b2273229456ba96b8905d6",
+          "bytes": 85292
+        }
+      ]
+    },
+    {
+      "id": "sentinel2_l2a",
+      "name": "Copernicus Sentinel-2 Level-2A surface reflectance (dry season scene)",
+      "publisher": "European Space Agency / European Commission (Copernicus), via open STAC catalogue",
+      "url": "https://earth-search.aws.element84.com/v1",
+      "urls_tried": [
+        {
+          "url": "https://earth-search.aws.element84.com/v1",
+          "result": "cached: s2_bands.tif"
+        },
+        {
+          "url": "https://earth-search.aws.element84.com/v1",
+          "result": "repaired cached stack: removed a doubly applied BOA offset"
+        }
+      ],
+      "licence": "Copernicus Sentinel data terms: free, full and open access (attribution required)",
+      "licence_url": "https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice",
+      "attribution": "Contains modified Copernicus Sentinel data [year], processed by GeoRevive",
+      "accessed_at": "2026-10-10T22:06:43.741836",
+      "bbox": [
+        30.75,
+        -18.05,
+        31.5,
+        -17.55
+      ],
+      "record_count": null,
+      "raster_size": "1336 x 937 px @ 60 m (8 bands)",
+      "status": "downloaded",
+      "note": "Bottom-of-atmosphere reflectance (bands B02-B12, SCL) for one low-cloud dry-season date over the pilot area. Scene date 2026-07-14; scenes: S2C_35KRV_20260714_0_L2A, S2C_35KRA_20260714_0_L2A, S2C_36KTF_20260714_0_L2A, S2C_36KUF_20260714_0_L2A; mean cloud 0.0%.",
+      "usage": "Band-ratio alteration indices (iron oxide B4/B2, ferrous iron B12/B8A+B3/B4, clay/hydroxyl B11/B12) with cloud, water and vegetation masks; evidence layers for prospectivity.",
+      "error": null,
+      "how_to_obtain": null,
+      "details": {
+        "scene_ids": [
+          "S2C_35KRV_20260714_0_L2A",
+          "S2C_35KRA_20260714_0_L2A",
+          "S2C_36KTF_20260714_0_L2A",
+          "S2C_36KUF_20260714_0_L2A"
+        ],
+        "date": "2026-07-14",
+        "cloud_cover_mean": 0.0002205,
+        "coverage": 1.0,
+        "catalogue": "earth-search",
+        "window": "2026-06-01/2026-10-01"
+      },
+      "is_inbox": false,
+      "layers": [
+        {
+          "id": "s2_iron_oxide",
+          "name": "Iron-oxide index (Sentinel-2 B4/B2)",
+          "kind": "raster"
+        },
+        {
+          "id": "s2_ferrous",
+          "name": "Ferrous-iron index (B12/B8A + B3/B4)",
+          "kind": "raster"
+        },
+        {
+          "id": "s2_clay",
+          "name": "Clay / hydroxyl index (B11/B12)",
+          "kind": "raster"
+        },
+        {
+          "id": "s2_ndvi",
+          "name": "Vegetation (NDVI)",
+          "kind": "raster"
+        },
+        {
+          "id": "s2_true_colour",
+          "name": "Sentinel-2 true colour",
+          "kind": "raster"
+        }
+      ],
+      "files": [
+        {
+          "path": "data/raw/sentinel2_l2a/s2_bands.tif",
+          "url": "https://earth-search.aws.element84.com/v1",
+          "sha256": "dae025807dcf0a6c30c20e45c8086bcc5a5d052a954fedf5fa84237f8ec893fa",
+          "bytes": 43345055
+        },
+        {
+          "path": "data/raw/sentinel2_l2a/manifest.json",
+          "url": null,
+          "sha256": "7d848f4f132bd1a1fe2eb887fb4525519008f15b11822dfbca50a268bfa86c48",
+          "bytes": 4821
+        },
+        {
+          "path": "data/raw/sentinel2_l2a/S2C_35KRV_20260714_0_L2A.json",
+          "url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_35KRV_20260714_0_L2A",
+          "sha256": "f9f59dcce9d8923407e6d343201a527e815af696d2cadbefa87f2b653affc05f",
+          "bytes": 22512
+        },
+        {
+          "path": "data/raw/sentinel2_l2a/S2C_35KRA_20260714_0_L2A.json",
+          "url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_35KRA_20260714_0_L2A",
+          "sha256": "b7dd416fb66b709c0089efb0fcc703b6077287cd31c35fbfc9a15710f2fb5163",
+          "bytes": 22500
+        },
+        {
+          "path": "data/raw/sentinel2_l2a/S2C_36KTF_20260714_0_L2A.json",
+          "url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_36KTF_20260714_0_L2A",
+          "sha256": "91bdf5a7bc1840dff59768fb0e6811783aa7887edc068f02625e69d53d5f1fe2",
+          "bytes": 22503
+        },
+        {
+          "path": "data/raw/sentinel2_l2a/S2C_36KUF_20260714_0_L2A.json",
+          "url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_36KUF_20260714_0_L2A",
+          "sha256": "5ccb80e1343c9103a2f80f65abcdb4d8c7e1c1b89435e649da053aad7273f8d2",
+          "bytes": 22509
+        }
+      ]
+    },
+    {
+      "id": "usgs_africa_minerals",
+      "name": "USGS Compilation of Geospatial Data for the Mineral Industries and Related Infrastructure of Africa",
+      "publisher": "U.S. Geological Survey, National Minerals Information Center",
+      "url": "https://www.sciencebase.gov/catalog/item/607611a9d34e018b3201cbbf",
+      "urls_tried": [
+        {
+          "url": "https://www.sciencebase.gov/catalog/item/607611a9d34e018b3201cbbf?format=json",
+          "result": "HTTP 403"
+        }
+      ],
+      "licence": "Public domain (U.S. Government work); some layers compiled from third-party sources - check layer metadata",
+      "licence_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "attribution": "Mineral facilities: USGS NMIC Africa geospatial compilation (2021)",
+      "accessed_at": "2026-10-10T20:14:08.748962",
+      "bbox": null,
+      "record_count": null,
+      "raster_size": null,
+      "status": "needs_manual_request",
+      "note": "Mineral production/processing facilities and exploration/development sites in Africa (reference year 2018).",
+      "usage": "Additional known sites for validation and context; points inside the pilot area are shown on the map.",
+      "error": "ScienceBase answered HTTP 403 to an automated request (bot protection). GeoRevive does not bypass access controls.",
+      "how_to_obtain": "The data are public domain and free to download by a person:\n1. In a browser, open https://www.sciencebase.gov/catalog/item/607611a9d34e018b3201cbbf\n2. Download the geodatabase / shapefile .zip listed under 'Attached Files' (or in the child items).\n3. Save it into data\\inbox\\usgs\\africa\\ (inside the GeoRevive folder).\n4. Re-run: .\\.venv\\Scripts\\python.exe -m georevive.ingest --source usgs_africa_minerals",
+      "details": {},
+      "is_inbox": false,
+      "layers": [],
+      "files": []
+    },
+    {
+      "id": "usgs_geo7_africa",
+      "name": "USGS Geology of Africa (geo7_2ag, Open-File Report 97-470A)",
+      "publisher": "U.S. Geological Survey (World Energy Project)",
+      "url": "https://www.sciencebase.gov/catalog/item/60d0ff26d34e86b938aab404",
+      "urls_tried": [
+        {
+          "url": "https://www.sciencebase.gov/catalog/item/60d0ff26d34e86b938aab404?format=json",
+          "result": "HTTP 403"
+        }
+      ],
+      "licence": "Public domain (USGS); coastline/boundaries contain ESRI proprietary data - licence to confirm",
+      "licence_url": null,
+      "attribution": "Geology of Africa: Persits et al., USGS OFR 97-470A",
+      "accessed_at": "2026-10-10T20:42:13.151597",
+      "bbox": null,
+      "record_count": null,
+      "raster_size": null,
+      "status": "needs_manual_request",
+      "note": "1:5M surficial/bedrock geology of Africa by age.",
+      "usage": "Regional context only.",
+      "error": "ScienceBase answered HTTP 403 to an automated request (bot protection); not bypassed.",
+      "how_to_obtain": "Optional (regional context only). In a browser open https://www.sciencebase.gov/catalog/item/60d0ff26d34e86b938aab404, download the shapefile .zip, save it into data\\inbox\\usgs\\geo7\\ and re-run --source usgs_geo7_africa.",
+      "details": {},
+      "is_inbox": false,
+      "layers": [],
+      "files": []
+    },
+    {
+      "id": "usgs_mrds",
+      "name": "USGS Mineral Resources Data System (MRDS) - Zimbabwe",
+      "publisher": "U.S. Geological Survey",
+      "url": "https://mrdata.usgs.gov/mrds/mrds-csv.zip",
+      "urls_tried": [
+        {
+          "url": "https://mrdata.usgs.gov/mrds/mrds-csv.zip",
+          "result": "skipped: disallowed by robots.txt"
+        }
+      ],
+      "licence": "Public domain (U.S. Government work)",
+      "licence_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "attribution": "Mineral occurrences: USGS MRDS (Mason & Arndt 1996; McFaul et al. 2000)",
+      "accessed_at": "2026-10-10T20:14:07.117316",
+      "bbox": null,
+      "record_count": null,
+      "raster_size": null,
+      "status": "needs_manual_request",
+      "note": "Known mineral occurrences, prospects and mines (points). USGS stopped systematic updates in 2011, so records reflect historical compilations and locations can be approximate.",
+      "usage": "Known gold occurrences are the training positives for the data-driven model and the validation set for both models (never an input feature).",
+      "error": "mrdata.usgs.gov/robots.txt disallows all automated agents (User-agent: * / Disallow: /), so GeoRevive does not download MRDS by script.",
+      "how_to_obtain": "MRDS is public domain, but its website forbids automated downloads. A person can download it:\n1. In a browser, open https://mrdata.usgs.gov/mrds/ and, under Downloads, click 'mrds-csv.zip' (CSV, about 23 MB).\n2. Save the file as data\\inbox\\usgs\\mrds-csv.zip (inside the GeoRevive folder).\n3. Re-run: .\\.venv\\Scripts\\python.exe -m georevive.ingest --source usgs_mrds",
+      "details": {},
+      "is_inbox": false,
+      "layers": [],
+      "files": []
+    },
+    {
+      "id": "zgs_bulletins",
+      "name": "Zimbabwe Geological Survey Bulletin No. 94 and related short reports (paper)",
+      "publisher": "Zimbabwe Geological Survey",
+      "url": "https://www.bgs.ac.uk/",
+      "urls_tried": [],
+      "licence": "\u00a9 Zimbabwe Geological Survey - permission required",
+      "licence_url": null,
+      "attribution": "",
+      "accessed_at": "2026-10-10T20:38:55.747394",
+      "bbox": null,
+      "record_count": null,
+      "raster_size": null,
+      "status": "needs_manual_request",
+      "note": "The explanatory bulletin for the Harare 1:100 000 sheet and older reports on the Harare greenstone belt.",
+      "usage": "Primary documents for data rescue of the pilot area once scanned with permission.",
+      "error": "No openly downloadable digital copy was found.",
+      "how_to_obtain": "1. Zimbabwe Geological Survey (Ministry of Mines and Mining Development, Harare): request a copy of Bulletin No. 94 and permission to scan selected pages for this prototype. Confirm current contact details through the Ministry.\n2. BGS library (enquiries@bgs.ac.uk) holds many ZGS bulletins and may advise on access.\n3. University of Zimbabwe Geology Department library may hold copies.\n4. Scan at 300-400 dpi, save into data/inbox/ and enter the source and permission details when uploading.",
+      "details": {},
+      "is_inbox": false,
+      "layers": [],
+      "files": []
+    },
+    {
+      "id": "inbox",
+      "name": "Manual inbox (data/inbox/)",
+      "publisher": "GeoRevive team",
+      "url": "data/inbox/",
+      "urls_tried": [],
+      "licence": "Per file (entered on upload)",
+      "licence_url": null,
+      "attribution": null,
+      "accessed_at": "2026-10-10T20:39:13.075600",
+      "bbox": null,
+      "record_count": 0,
+      "raster_size": null,
+      "status": "downloaded",
+      "note": "Documents and scans added by the team. 0 file(s) in the inbox; 0 still need source/licence details.",
+      "usage": "Data rescue.",
+      "error": null,
+      "how_to_obtain": null,
+      "details": {
+        "registered": [],
+        "missing_details": []
+      },
+      "is_inbox": true,
+      "layers": [],
+      "files": []
+    }
+  ]
+}

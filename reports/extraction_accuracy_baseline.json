@@ -1,0 +1,240 @@
+{
+  "overall": {
+    "precision": 0.9565217391304348,
+    "recall": 0.44,
+    "f1": 0.6027397260273973,
+    "tp": 22,
+    "fp": 1,
+    "fn": 28
+  },
+  "pages": [
+    {
+      "label_file": "gmw_1902_p115.json",
+      "title": "The Gold Mines of the World (1902), p.115",
+      "source_id": "internet_archive_scans",
+      "licence": "Public domain (Internet Archive: NOT_IN_COPYRIGHT)",
+      "labelled_by": "Claude (build assistant), read from the page image",
+      "verified": false,
+      "status": "evaluated",
+      "engine": "rapidocr",
+      "per_type": {
+        "commodity": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1
+        },
+        "mine": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1
+        },
+        "lithology": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "n_pred": 3,
+      "n_gold": 5,
+      "missed": [
+        [
+          "commodity",
+          "arsenic"
+        ],
+        [
+          "mine",
+          "ayrshire"
+        ]
+      ],
+      "spurious": []
+    },
+    {
+      "label_file": "gmw_1902_p116.json",
+      "title": "The Gold Mines of the World (1902), p.116",
+      "source_id": "internet_archive_scans",
+      "licence": "Public domain (Internet Archive: NOT_IN_COPYRIGHT)",
+      "labelled_by": "Claude (build assistant), read from the page image",
+      "verified": false,
+      "status": "evaluated",
+      "engine": "rapidocr",
+      "per_type": {
+        "commodity": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "mine": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 12
+        },
+        "lithology": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "n_pred": 3,
+      "n_gold": 15,
+      "missed": [
+        [
+          "mine",
+          "alice proprietary"
+        ],
+        [
+          "mine",
+          "bartissol"
+        ],
+        [
+          "mine",
+          "beatrice"
+        ],
+        [
+          "mine",
+          "mozambique"
+        ],
+        [
+          "mine",
+          "pardy s"
+        ],
+        [
+          "mine",
+          "penhalonga"
+        ],
+        [
+          "mine",
+          "premier tati monarch"
+        ],
+        [
+          "mine",
+          "quagga"
+        ],
+        [
+          "mine",
+          "revue"
+        ],
+        [
+          "mine",
+          "rezende"
+        ],
+        [
+          "mine",
+          "sabi ophir"
+        ],
+        [
+          "mine",
+          "vaughan williams"
+        ]
+      ],
+      "spurious": []
+    },
+    {
+      "label_file": "nature_1911_p512.json",
+      "title": "Nature 87, p.512 (1911), review of 'The Mineral Industry of Rhodesia'",
+      "source_id": "internet_archive_scans",
+      "licence": "Public Domain Mark per Internet Archive; page footer '(c) 1911 Nature Publishing Group' - licence to confirm",
+      "labelled_by": "Claude (build assistant), read from the page image",
+      "verified": false,
+      "status": "evaluated",
+      "engine": "rapidocr",
+      "per_type": {
+        "rock_unit": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        },
+        "commodity": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 4
+        },
+        "mineral": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 2
+        },
+        "mine": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 4
+        },
+        "farm": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1
+        },
+        "lithology": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 3
+        }
+      },
+      "n_pred": 17,
+      "n_gold": 30,
+      "missed": [
+        [
+          "commodity",
+          "bismuth"
+        ],
+        [
+          "commodity",
+          "cobalt"
+        ],
+        [
+          "commodity",
+          "molybdenum"
+        ],
+        [
+          "commodity",
+          "nickel"
+        ],
+        [
+          "farm",
+          "appingadam"
+        ],
+        [
+          "lithology",
+          "alluvium"
+        ],
+        [
+          "lithology",
+          "granulite"
+        ],
+        [
+          "lithology",
+          "syenite"
+        ],
+        [
+          "mine",
+          "alaska"
+        ],
+        [
+          "mine",
+          "bwana m kubwe"
+        ],
+        [
+          "mine",
+          "kansanshe"
+        ],
+        [
+          "mine",
+          "umkondo"
+        ],
+        [
+          "mineral",
+          "galena"
+        ],
+        [
+          "mineral",
+          "malachite"
+        ]
+      ],
+      "spurious": [
+        [
+          "rock_unit",
+          "umkondo group"
+        ]
+      ]
+    }
+  ]
+}

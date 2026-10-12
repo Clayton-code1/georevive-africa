@@ -1,0 +1,105 @@
+# GeoRevive Africa configuration
+# Change the pilot area here. Coordinates are WGS84 longitude/latitude (EPSG:4326).
+# PROVISIONAL: replace with the exact extent of the ZGS Harare 1:100 000 sheet (Bulletin 94)
+# once confirmed from BGS report OR/26/047.
+pilot_area:
+  name: "Harare 1:100 000 sheet (ZGS Bulletin 94) - provisional extent"
+  bbox: [30.75, -18.05, 31.50, -17.55]   # [min_lon, min_lat, max_lon, max_lat]
+  working_crs: "EPSG:32736"              # WGS 84 / UTM zone 36S (metres)
+  country_iso3: "ZWE"
+  country_iso2: "ZW"
+
+paths:
+  data_dir: "data"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  cache_dir: "data/cache"
+  inbox_dir: "data/inbox"
+  rescue_dir: "data/rescue"
+  snapshots_dir: "data/snapshots"
+  reports_dir: "reports"
+  docs_dir: "docs"
+  database: "data/app.db"
+  gpkg: "data/processed/pilot.gpkg"
+
+ingest:
+  user_agent: "GeoRevive-Africa-prototype/0.1 (research prototype; contact: see README)"
+  request_timeout_s: 60
+  min_seconds_between_requests: 1.0
+  sentinel2:
+    stac_urls:
+      - "https://earth-search.aws.element84.com/v1"
+      - "https://planetarycomputer.microsoft.com/api/stac/v1"
+    collection: "sentinel-2-l2a"
+    # dry season windows (Zimbabwe dry season ~ May-October), most recent first
+    date_windows:
+      - "2026-06-01/2026-10-01"
+      - "2025-06-01/2025-10-31"
+    max_cloud_pct: 10
+    # 60 m keeps the download small (~50 MB, read from COG overviews); the prospectivity cell is 250 m.
+    # Use 20 for full Sentinel-2 detail on a fast connection.
+    resolution_m: 60
+  dem:
+    resolution_m: 30
+  historical_scans:
+    max_items: 5
+
+rescue:
+  # Demo/test pages rendered from openly licensed documents already in the Source Registry
+  # (python -m georevive.rescue.samples). 'match' selects the PDF inside the source's files.
+  sample_pages:
+    - id: hall_1909_p76
+      source_id: internet_archive_scans
+      match: prehistoricrhode00hall
+      page: 126
+      title: "Prehistoric Rhodesia (Hall, 1909), p.76 - ancient gold workings, reefs and mine depths"
+      licence: "Not in copyright (Smithsonian Libraries, via Internet Archive)"
+      url: "https://archive.org/details/prehistoricrhode00hall"
+      description: "Colour scan of aged paper with gutter shading (uneven lighting) - the best enhancement demo."
+    - id: gmw_1902_p115
+      source_id: internet_archive_scans
+      match: goldminesworldd00curlgoog
+      page: 160
+      title: "The Gold Mines of the World (Curle, 1902), p.115 - Mashonaland, Ayrshire mine"
+      licence: "Public domain (Internet Archive: NOT_IN_COPYRIGHT)"
+      url: "https://archive.org/details/goldminesworldd00curlgoog"
+      description: "Scanned book page with page curl and uneven inking."
+    - id: gmw_1902_p116
+      source_id: internet_archive_scans
+      match: goldminesworldd00curlgoog
+      page: 161
+      title: "The Gold Mines of the World (Curle, 1902), p.116 - Beatrice, Manicaland, Penhalonga"
+      licence: "Public domain (Internet Archive: NOT_IN_COPYRIGHT)"
+      url: "https://archive.org/details/goldminesworldd00curlgoog"
+    - id: nature_1911_p512
+      source_id: internet_archive_scans
+      match: paper-doi-10_1038_087511b0
+      page: 2
+      title: "Nature 87, p.512 (1911) - review of 'The Mineral Industry of Rhodesia'"
+      licence: "Public Domain Mark per Internet Archive; page footer reads '(c) 1911 Nature Publishing Group' - licence to confirm"
+      url: "https://archive.org/details/paper-doi-10_1038_087511b0"
+      description: "Two-column journal page."
+
+prospectivity:
+  commodity: "gold"
+  cell_size_m: 250
+  random_background_points: 2000
+  background_exclusion_m: 1000
+  spatial_cv_block_m: 5000
+  spatial_cv_folds: 5
+  context_radius_m: 5000
+
+extraction:
+  mode: "rules"          # "rules" (offline, default) or "llm" (needs ANTHROPIC_API_KEY in .env)
+  llm_model: "claude-sonnet-5-5"
+  ocr_engine: "auto"     # "auto" (Tesseract if installed, else RapidOCR), "tesseract", "rapidocr"
+
+security:
+  # One-click demo-account sign-in, accepted ONLY from this computer (127.0.0.1).
+  # Set to false for any shared or production deployment.
+  demo_quick_login: true
+
+server:
+  api_host: "127.0.0.1"
+  api_port: 8000
+  web_port: 5173

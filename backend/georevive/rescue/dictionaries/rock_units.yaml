@@ -1,0 +1,53 @@
+# Rock units and lithologies relevant to Zimbabwe (Harare greenstone belt and surrounds).
+# Each entry: canonical name -> list of spellings/variants (case-insensitive, whole words).
+# class: used by prospectivity (host = favourable greenstone/mafic-ultramafic, granite, cover, other)
+# Geoscience Lead: please review and extend.
+stratigraphic:
+  Bulawayan Group: {class: host, variants: ["Bulawayan", "Bulawayan Group", "Bulawayan System"]}
+  Shamvaian Group: {class: host, variants: ["Shamvaian", "Shamvaian Group", "Shamvaian System"]}
+  Sebakwian Group: {class: host, variants: ["Sebakwian", "Sebakwian Group", "Sebakwian System"]}
+  Upper Greenstones: {class: host, variants: ["Upper Greenstones", "Upper Greenstone"]}
+  Lower Greenstones: {class: host, variants: ["Lower Greenstones", "Lower Greenstone"]}
+  Harare greenstone belt: {class: host, variants: ["Harare greenstone belt", "Salisbury greenstone belt", "Salisbury gold belt", "Harare belt"]}
+  Great Dyke: {class: other, variants: ["Great Dyke"]}
+  Chilimanzi Suite: {class: granite, variants: ["Chilimanzi", "Chilimanzi Suite", "Chilimanzi granite"]}
+  Sesombi Suite: {class: granite, variants: ["Sesombi", "Sesombi Suite", "Sesombi tonalite"]}
+  Wedza Suite: {class: granite, variants: ["Wedza Suite", "Wedza granite"]}
+  Rhodesdale gneiss: {class: granite, variants: ["Rhodesdale gneiss", "Rhodesdale granite", "Rhodesdale"]}
+  Karoo Supergroup: {class: cover, variants: ["Karoo", "Karroo", "Karoo Supergroup", "Karroo System"]}
+  Kalahari Sand: {class: cover, variants: ["Kalahari Sand", "Kalahari sands", "Kalahari Group"]}
+  Umkondo Group: {class: other, variants: ["Umkondo Group", "Umkondo System"]}  # bare "Umkondo" is also a place/deposit name
+  Piriwiri Group: {class: other, variants: ["Piriwiri Group"]}
+  Lomagundi Group: {class: other, variants: ["Lomagundi Group", "Lomagundi System"]}
+lithology:
+  greenstone: {class: host, variants: ["greenstone", "greenstones", "green schist", "greenschist"]}
+  banded ironstone: {class: host, variants: ["banded ironstone", "banded iron formation", "banded iron-stone", "BIF", "ironstone"]}
+  basalt: {class: host, variants: ["basalt", "basalts", "metabasalt", "pillow lava", "pillow lavas"]}
+  andesite: {class: host, variants: ["andesite", "andesites", "andesitic"]}
+  dacite: {class: host, variants: ["dacite", "dacites", "dacitic"]}
+  rhyolite: {class: host, variants: ["rhyolite", "rhyolites", "felsite", "felsites", "felsic volcanics", "porphyry", "quartz porphyry"]}
+  komatiite: {class: host, variants: ["komatiite", "komatiites", "komatiitic"]}
+  serpentinite: {class: host, variants: ["serpentinite", "serpentine", "serpentinites"]}
+  talc schist: {class: host, variants: ["talc schist", "talc-schist", "talc-carbonate"]}
+  ultramafic: {class: host, variants: ["ultramafic", "ultrabasic", "peridotite", "dunite", "pyroxenite"]}
+  amphibolite: {class: host, variants: ["amphibolite", "amphibolites", "hornblende schist"]}
+  dolerite: {class: other, variants: ["dolerite", "dolerites", "diabase"]}
+  gabbro: {class: host, variants: ["gabbro", "gabbros", "norite"]}
+  diorite: {class: host, variants: ["diorite", "diorites", "quartz diorite"]}
+  chlorite schist: {class: host, variants: ["chlorite schist", "chlorite-schist", "chloritic schist"]}
+  schist: {class: host, variants: ["schist", "schists"]}
+  phyllite: {class: host, variants: ["phyllite", "phyllites", "slate", "slates"]}
+  greywacke: {class: host, variants: ["greywacke", "greywackes", "graywacke"]}
+  conglomerate: {class: other, variants: ["conglomerate", "conglomerates"]}
+  quartzite: {class: other, variants: ["quartzite", "quartzites"]}
+  granite: {class: granite, variants: ["granite", "granites", "granitic", "granodiorite", "adamellite"]}
+  tonalite: {class: granite, variants: ["tonalite", "tonalites", "trondhjemite"]}
+  gneiss: {class: granite, variants: ["gneiss", "gneisses", "granite-gneiss", "gneissic"]}
+  pegmatite: {class: other, variants: ["pegmatite", "pegmatites"]}
+  syenite: {class: granite, variants: ["syenite", "syenites", "syenitic"]}
+  granulite: {class: other, variants: ["granulite", "granulites"]}
+  porphyrite: {class: host, variants: ["porphyrite", "porphyrites"]}
+  limestone: {class: other, variants: ["dolomitic limestone", "crystalline limestone"]}
+  quartz reef: {class: host, variants: ["quartz reef", "quartz reefs", "quartz vein", "quartz veins", "reef", "reefs", "lode", "lodes"]}
+  laterite: {class: cover, variants: ["laterite", "laterites", "lateritic"]}
+  alluvium: {class: cover, variants: ["alluvium", "alluvial deposits", "alluvial"]}

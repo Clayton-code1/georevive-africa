@@ -1,0 +1,16 @@
+{
+  "page_image": "data/samples/gmw_1902_p115.png",
+  "source_id": "internet_archive_scans",
+  "title": "The Gold Mines of the World (1902), p.115",
+  "licence": "Public domain (Internet Archive: NOT_IN_COPYRIGHT)",
+  "labelled_by": "Claude (build assistant), read from the page image",
+  "verified_by_geologist": false,
+  "note": "Unique facts on the page. Values in shillings per ton (40s., 38s., 50s.) are money, not grades, and are deliberately not labelled as assays.",
+  "facts": [
+    {"type": "mine", "value": "Ayrshire Mine"},
+    {"type": "lithology", "value": "diorite"},
+    {"type": "lithology", "value": "quartz reef"},
+    {"type": "commodity", "value": "gold"},
+    {"type": "commodity", "value": "arsenic"}
+  ]
+}

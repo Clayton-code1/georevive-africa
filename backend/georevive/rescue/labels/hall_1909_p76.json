@@ -1,0 +1,27 @@
+{
+  "page_image": "data/samples/hall_1909_p76.png",
+  "source_id": "internet_archive_scans",
+  "title": "Prehistoric Rhodesia (Hall, 1909), p.76",
+  "licence": "Not in copyright (Smithsonian Libraries, via Internet Archive)",
+  "labelled_by": "Claude (build assistant), read from the page image",
+  "verified_by_geologist": false,
+  "held_out": true,
+  "note": "HELD-OUT page: labelled before the extractor was run on it and never used to adjust the rules. Mine names in the footnote list (with depths) are labelled as mines. Depths in feet are not assays.",
+  "facts": [
+    {"type": "mine", "value": "Mystery Reef"},
+    {"type": "mine", "value": "Urangwe Reef"},
+    {"type": "mine", "value": "Geelong Mine"},
+    {"type": "mine", "value": "Hard Times Mine"},
+    {"type": "mine", "value": "Alliance Mine"},
+    {"type": "mine", "value": "Celtic Mine"},
+    {"type": "mine", "value": "Minx Mine"},
+    {"type": "mine", "value": "Kameel Mine"},
+    {"type": "mine", "value": "Oceolo Mine"},
+    {"type": "mine", "value": "Susannah Mine"},
+    {"type": "mine", "value": "Thornhill Mine"},
+    {"type": "mine", "value": "Early Morn Mine"},
+    {"type": "commodity", "value": "gold"},
+    {"type": "lithology", "value": "quartz reef"},
+    {"type": "lithology", "value": "diorite"}
+  ]
+}

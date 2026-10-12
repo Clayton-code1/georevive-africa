@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "georevive"
+version = "0.1.0"
+description = "GeoRevive Africa - geological data rescue and explainable prospectivity prototype"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.29",
+  "sqlalchemy>=2.0",
+  "pydantic>=2.6",
+  "python-dotenv>=1.0",
+  "pyyaml>=6.0",
+  "python-multipart>=0.0.9",
+  "argon2-cffi>=23.1",
+  "pyjwt>=2.8",
+  "requests>=2.31",
+  "numpy>=1.26,<2.3",
+  "scipy>=1.12",
+  "pandas>=2.2",
+  "geopandas>=0.14",
+  "pyogrio>=0.7",
+  "shapely>=2.0",
+  "pyproj>=3.6",
+  "rasterio>=1.3.9",
+  "pystac-client>=0.7",
+  "scikit-learn>=1.4",
+  "shap>=0.45",
+  "opencv-python-headless>=4.9",
+  "scikit-image>=0.22",
+  "pymupdf>=1.24",
+  "pytesseract>=0.3.10",
+  "rapidocr-onnxruntime>=1.3",
+  "reportlab>=4.1",
+  "matplotlib>=3.8",
+  "pillow>=10.2",
+]
+
+[project.optional-dependencies]
+llm = ["anthropic>=0.40"]
+dev = ["pytest>=8.0", "ruff>=0.4", "httpx>=0.27"]
+
+[tool.setuptools.packages.find]
+include = ["georevive*"]
+
+[tool.setuptools.package-data]
+georevive = ["rescue/dictionaries/*.yaml"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["B008", "E501"]  # line length is handled by `ruff format`; long URLs/messages stay readable
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["network: test needs internet (skipped by default)"]
+addopts = "-m 'not network'"

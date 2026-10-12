@@ -1,0 +1,272 @@
+{
+  "overall": {
+    "precision": 0.9743589743589743,
+    "recall": 0.5846153846153846,
+    "f1": 0.7307692307692307,
+    "tp": 38,
+    "fp": 1,
+    "fn": 27
+  },
+  "pages": [
+    {
+      "label_file": "gmw_1902_p115.json",
+      "title": "The Gold Mines of the World (1902), p.115",
+      "source_id": "internet_archive_scans",
+      "licence": "Public domain (Internet Archive: NOT_IN_COPYRIGHT)",
+      "labelled_by": "Claude (build assistant), read from the page image",
+      "verified": false,
+      "held_out": false,
+      "status": "evaluated",
+      "engine": "rapidocr",
+      "per_type": {
+        "lithology": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "mine": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "commodity": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1
+        }
+      },
+      "n_pred": 4,
+      "n_gold": 5,
+      "missed": [
+        [
+          "commodity",
+          "arsenic"
+        ]
+      ],
+      "spurious": []
+    },
+    {
+      "label_file": "gmw_1902_p116.json",
+      "title": "The Gold Mines of the World (1902), p.116",
+      "source_id": "internet_archive_scans",
+      "licence": "Public domain (Internet Archive: NOT_IN_COPYRIGHT)",
+      "labelled_by": "Claude (build assistant), read from the page image",
+      "verified": false,
+      "held_out": false,
+      "status": "evaluated",
+      "engine": "rapidocr",
+      "per_type": {
+        "lithology": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "mine": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 8
+        },
+        "commodity": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "n_pred": 7,
+      "n_gold": 15,
+      "missed": [
+        [
+          "mine",
+          "alice proprietary"
+        ],
+        [
+          "mine",
+          "beatrice"
+        ],
+        [
+          "mine",
+          "mozambique"
+        ],
+        [
+          "mine",
+          "penhalonga"
+        ],
+        [
+          "mine",
+          "premier tati monarch"
+        ],
+        [
+          "mine",
+          "quagga"
+        ],
+        [
+          "mine",
+          "sabi ophir"
+        ],
+        [
+          "mine",
+          "vaughan williams"
+        ]
+      ],
+      "spurious": []
+    },
+    {
+      "label_file": "hall_1909_p76.json",
+      "title": "Prehistoric Rhodesia (Hall, 1909), p.76",
+      "source_id": "internet_archive_scans",
+      "licence": "Not in copyright (Smithsonian Libraries, via Internet Archive)",
+      "labelled_by": "Claude (build assistant), read from the page image",
+      "verified": false,
+      "held_out": true,
+      "status": "evaluated",
+      "engine": "rapidocr",
+      "per_type": {
+        "lithology": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "assay": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        },
+        "mine": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 10
+        },
+        "commodity": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "n_pred": 6,
+      "n_gold": 15,
+      "missed": [
+        [
+          "mine",
+          "alliance"
+        ],
+        [
+          "mine",
+          "celtic"
+        ],
+        [
+          "mine",
+          "early morn"
+        ],
+        [
+          "mine",
+          "geelong"
+        ],
+        [
+          "mine",
+          "hard times"
+        ],
+        [
+          "mine",
+          "kameel"
+        ],
+        [
+          "mine",
+          "minx"
+        ],
+        [
+          "mine",
+          "oceolo"
+        ],
+        [
+          "mine",
+          "susannah"
+        ],
+        [
+          "mine",
+          "thornhill"
+        ]
+      ],
+      "spurious": [
+        [
+          "assay",
+          "99 %"
+        ]
+      ]
+    },
+    {
+      "label_file": "nature_1911_p512.json",
+      "title": "Nature 87, p.512 (1911), review of 'The Mineral Industry of Rhodesia'",
+      "source_id": "internet_archive_scans",
+      "licence": "Public Domain Mark per Internet Archive; page footer '(c) 1911 Nature Publishing Group' - licence to confirm",
+      "labelled_by": "Claude (build assistant), read from the page image",
+      "verified": false,
+      "held_out": false,
+      "status": "evaluated",
+      "engine": "rapidocr",
+      "per_type": {
+        "lithology": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 1
+        },
+        "mineral": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "commodity": {
+          "tp": 10,
+          "fp": 0,
+          "fn": 3
+        },
+        "mine": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 4
+        },
+        "farm": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "n_pred": 22,
+      "n_gold": 30,
+      "missed": [
+        [
+          "commodity",
+          "bismuth"
+        ],
+        [
+          "commodity",
+          "cobalt"
+        ],
+        [
+          "commodity",
+          "nickel"
+        ],
+        [
+          "lithology",
+          "alluvium"
+        ],
+        [
+          "mine",
+          "alaska"
+        ],
+        [
+          "mine",
+          "bwana m kubwe"
+        ],
+        [
+          "mine",
+          "kansanshe"
+        ],
+        [
+          "mine",
+          "umkondo"
+        ]
+      ],
+      "spurious": []
+    }
+  ]
+}
